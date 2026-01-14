@@ -4,7 +4,7 @@ This project contains a Jupyter notebook tutorial for exploring MatGL, a Python 
 
 ## Project Overview
 
-**MatGL** provides fast, DFT-accurate interatomic potentials using graph neural networks. The tutorial demonstrates structure relaxation using the M3GNet universal potential trained on Materials Project data.
+**MatGL** provides fast, DFT-accurate interatomic potentials using graph neural networks. The tutorial demonstrates structure relaxation using the TensorNet universal potential trained on MatPES data with PBE-level accuracy.
 
 ## Project Structure
 
@@ -16,17 +16,24 @@ This project contains a Jupyter notebook tutorial for exploring MatGL, a Python 
 ## Technical Details
 
 - **Environment**: Uses `uv` for Python package management
-- **Backend**: Configured for PyTorch Geometric (PYG) instead of DGL (better for macOS)
-- **Visualization**: Uses 3Dmol.js for interactive 3D structure viewing
+- **Backend**: Configured for PyTorch Geometric (PYG) - required for TensorNet models
+- **Model**: TensorNet-MatPES-PBE-v2025.1-PES (PYG-compatible)
+- **Visualization**: Uses 3Dmol.js with CIF format for interactive 3D viewing with unit cells
 - **Key Libraries**: matgl, pymatgen, ase, py3Dmol
+
+### Important Notes
+
+- **Model Compatibility**: M3GNet and CHGNet models require DGL backend, while TensorNet models work with PYG
+- **macOS Setup**: PYG backend is preferred on macOS (DGL installation can be problematic)
+- **CIF vs XYZ**: The viewer uses CIF format (not XYZ) to properly display unit cell boundaries
 
 ## Tutorial Contents
 
 The notebook covers:
 1. Creating crystal structures (BCC Molybdenum example)
-2. Loading pre-trained M3GNet models
+2. Loading pre-trained TensorNet models
 3. Structure relaxation (geometry optimization)
-4. Interactive 3D visualization
+4. Interactive 3D visualization with unit cell display
 5. Next steps and extensions
 
 ## Future Work / Extension Ideas
