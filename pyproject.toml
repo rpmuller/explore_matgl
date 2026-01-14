@@ -1,7 +1,13 @@
 [project]
-name = "matgl"
+name = "explore-matgl"
 version = "0.1.0"
-description = "Add your description here"
+description = "Tutorial exploring the MatGL interatomic potential framework"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "ase>=3.27.0",
+    "jupyter>=1.1.1",
+    "matgl>=2.0.6",
+    "py3dmol>=2.5.3",
+    "pymatgen>=2025.10.7",
+]
